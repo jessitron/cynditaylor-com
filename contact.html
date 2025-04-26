@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Cyndi Taylor Portrait Artist</title>
+    <meta name="description" content="Contact Cyndi Taylor for portrait commissions, inquiries, or to discuss your portrait needs.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Cyndi Taylor</h1>
+            <p class="tagline">Portrait Artist</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h2>Contact</h2>
+            <p>Commission a portrait or get in touch</p>
+        </section>
+
+        <section class="contact-content">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p>I'd love to hear from you about commissioning a portrait or any questions you might have about my work.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <h4>Email</h4>
+                        <p><a href="mailto:info@cynditaylor.com">info@cynditaylor.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Phone</h4>
+                        <p>(555) 123-4567</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Studio</h4>
+                        <p>By appointment only<br>
+                        [Studio Address]<br>
+                        [City, State ZIP]</p>
+                    </div>
+                </div>
+                
+                <div class="social-contact">
+                    <h4>Social Media</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                        <a href="#" aria-label="Pinterest">Pinterest</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3>Commission Inquiry</h3>
+                <form id="contactForm" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="commission-type">Commission Type</label>
+                        <select id="commission-type" name="commission-type">
+                            <option value="individual">Individual Portrait</option>
+                            <option value="family">Family Portrait</option>
+                            <option value="child">Child Portrait</option>
+                            <option value="pet">Pet Portrait</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn">Send Inquiry</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-items">
+                <div class="faq-item">
+                    <h3>How long does a commission take?</h3>
+                    <p>Most portrait commissions take 4-6 weeks to complete, depending on size, complexity, and my current workload. Rush orders may be available for an additional fee.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What are your prices?</h3>
+                    <p>Portrait prices vary based on size, medium, number of subjects, and complexity. Please contact me for a personalized quote based on your specific requirements.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you require a deposit?</h3>
+                    <p>Yes, I require a 50% non-refundable deposit to secure your commission and begin work. The remaining balance is due upon completion, before delivery.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you ship internationally?</h3>
+                    <p>Yes, I ship worldwide. International shipping costs will be calculated based on destination and included in your quote.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Cyndi Taylor</h3>
+                <p>Professional Portrait Artist</p>
+                <p>Email: <a href="mailto:info@cynditaylor.com">info@cynditaylor.com</a></p>
+            </div>
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram">Instagram</a>
+                <a href="#" aria-label="Facebook">Facebook</a>
+                <a href="#" aria-label="Pinterest">Pinterest</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; <span id="year">2023</span> Cyndi Taylor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
