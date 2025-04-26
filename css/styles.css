@@ -2,7 +2,7 @@
 :root {
     --primary-color: #3a3a3a;
     --secondary-color: #8a7968;
-    --accent-color: #d4c8be;
+    --accent-color: #363834;
     --background-color: #f9f7f5;
     --text-color: #333333;
     --light-text: #ffffff;
@@ -208,7 +208,6 @@ nav ul li a.active:after {
     margin-bottom: 2rem;
     break-inside: avoid;
     background-color: white;
-    overflow: hidden;
 }
 
 .gallery-item:hover {
@@ -220,7 +219,7 @@ nav ul li a.active:after {
     height: auto;
     transition: transform 0.5s ease;
     border-radius: 4px 4px 0 0;
-    display: block;
+    overflow: hidden;
 }
 
 .gallery-item:hover img {
@@ -293,7 +292,7 @@ nav ul li a.active:after {
 
 .page-header h2 {
     font-size: 3rem;
-    color: var(--primary-color);
+    color: var(--light-text);
 }
 
 .page-header p {
