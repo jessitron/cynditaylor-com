@@ -143,7 +143,7 @@ nav ul li a.active:after {
 /* Hero Section */
 .hero {
     height: 80vh;
-    background-image: url('../images/hero-bg.jpg');
+    background-image: url('../images/IMG_6503.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -558,7 +558,7 @@ footer {
     .contact-content {
         grid-template-columns: 1fr;
     }
-    
+
     .about-image {
         max-width: 500px;
         margin: 0 auto;
@@ -570,23 +570,23 @@ footer {
         flex-direction: column;
         padding: 1rem 5%;
     }
-    
+
     .logo {
         margin-bottom: 1rem;
     }
-    
+
     nav ul li {
         margin: 0 1rem;
     }
-    
+
     .hero h2 {
         font-size: 2.5rem;
     }
-    
+
     .hero p {
         font-size: 1.2rem;
     }
-    
+
     .faq-items {
         grid-template-columns: 1fr;
     }
@@ -597,24 +597,24 @@ footer {
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     nav ul li {
         margin: 0.5rem;
     }
-    
+
     .hero {
         height: 60vh;
     }
-    
+
     .hero h2 {
         font-size: 2rem;
     }
-    
+
     .gallery-preview,
     .gallery-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .process-steps {
         grid-template-columns: 1fr;
     }
