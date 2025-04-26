@@ -230,14 +230,14 @@ nav ul li a.active:after {
 .overlay {
     padding: 1rem;
     color: var(--text-color);
-    text-align: left;
+    text-align: center;
     width: 100%;
     background-color: white;
     border-top: 1px solid var(--border-color);
 }
 
 .overlay h3 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
     color: var(--secondary-color);
 }
 
