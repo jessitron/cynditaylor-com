@@ -1,6 +1,44 @@
 // Update copyright year
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Add a "copy reference" button next to every gallery item's title.
+// Copies the picture's name and absolute image URL to the clipboard.
+const COPY_ICON_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>';
+const CHECK_ICON_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        const img = item.querySelector('img');
+        const title = item.querySelector('.overlay h3');
+        if (!img || !title) return;
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'copy-btn';
+        button.innerHTML = COPY_ICON_SVG;
+        button.setAttribute('aria-label', `Copy reference to "${title.textContent.trim()}"`);
+
+        button.addEventListener('click', async () => {
+            const name = title.textContent.trim();
+            const url = img.src; // browser resolves to absolute URL
+            const text = `${name}\n${url}`;
+            try {
+                await navigator.clipboard.writeText(text);
+                button.classList.add('copied');
+                button.innerHTML = CHECK_ICON_SVG;
+                setTimeout(() => {
+                    button.classList.remove('copied');
+                    button.innerHTML = COPY_ICON_SVG;
+                }, 1500);
+            } catch (err) {
+                console.error('Copy failed:', err);
+            }
+        });
+
+        title.appendChild(button);
+    });
+});
+
 // Gallery filtering
 document.addEventListener('DOMContentLoaded', function() {
     // Only run this code on the gallery page
