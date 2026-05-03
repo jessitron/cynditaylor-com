@@ -1,5 +1,7 @@
 # Cyndi Taylor - Portrait Artist Website
 
+cyndibot was here 2026-05-03
+
 This is a static website for Cyndi Taylor, a professional portrait artist.
 
 ## Image Placeholders
