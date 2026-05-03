@@ -19,11 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
         button.setAttribute('aria-label', `Copy reference to "${title.textContent.trim()}"`);
 
         button.addEventListener('click', async () => {
-            const name = title.textContent.trim();
             const url = img.src; // browser resolves to absolute URL
-            const text = `${name}\n${url}`;
             try {
-                await navigator.clipboard.writeText(text);
+                await navigator.clipboard.writeText(url);
                 button.classList.add('copied');
                 button.innerHTML = CHECK_ICON_SVG;
                 setTimeout(() => {
