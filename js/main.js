@@ -56,9 +56,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Get category value
                 const category = button.getAttribute('data-category');
                 
-                // Filter gallery items
+                // Filter gallery items - support space-separated categories
                 galleryItems.forEach(item => {
-                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                    const itemCategories = item.getAttribute('data-category').split(' ');
+                    if (category === 'all' || itemCategories.includes(category)) {
                         item.style.display = 'block';
                     } else {
                         item.style.display = 'none';
