@@ -4,6 +4,40 @@ cyndibot was here 2026-05-03
 
 This is a static website for Cyndi Taylor, a professional portrait artist.
 
+## Image Guidelines
+
+### Target Image Sizes
+
+To ensure optimal website performance while maintaining visual quality:
+
+**Gallery Images (current implementation):**
+- **Maximum size:** 1600px on the longest edge
+- **Target file size:** 400-800 KB per image
+- **Format:** JPEG
+- **Why:** This provides excellent quality for modern displays (including 4K screens) while keeping page load times fast
+
+**Future Enhancement - Gallery Thumbnails:**
+- **Target size:** 800px on the longest edge
+- **Target file size:** 150-300 KB per image
+- **Use case:** For gallery grid display with click-through to full-size images
+
+### Image Management
+
+1. **Adding New Images:**
+   - Resize images to 1600px max on the longest edge before committing
+   - Optimize for web using 85-90% JPEG quality
+   - Test file size - aim for under 800 KB per image
+
+2. **Image Optimization:**
+   - Use JPG format for photographs
+   - Remove EXIF data except orientation
+   - Consider using WebP format with JPG fallbacks for better performance in future
+
+3. **Directory Structure:**
+   - All images go in the `images/` directory
+   - Keep original filenames when possible for tracking
+   - HEIC files are automatically converted to JPG during email processing
+
 ## Image Placeholders
 
 The website currently uses placeholder references for images. To complete the website setup, you'll need to add real images to the `images` directory:
@@ -13,11 +47,6 @@ The website currently uses placeholder references for images. To complete the we
    - `images/artist-portrait.jpg` - A portrait photo of Cyndi Taylor for the About page
    - `images/placeholder-1.jpg` through `images/placeholder-8.jpg` - Portfolio images for the gallery
    
-2. **Image Optimization:**
-   - Optimize all images for web to ensure fast loading times
-   - Use JPG format for photographs
-   - Consider using WebP format with JPG fallbacks for better performance
-
 ## Customization
 
 To customize the website for Cyndi Taylor:
