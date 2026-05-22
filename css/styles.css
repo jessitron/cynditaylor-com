@@ -208,6 +208,7 @@ nav ul li a.active:after {
     margin-bottom: 2rem;
     break-inside: avoid;
     background-color: white;
+    cursor: pointer;
 }
 
 .gallery-item:hover {
@@ -271,6 +272,86 @@ nav ul li a.active:after {
     width: 16px;
     height: 16px;
     display: inline-block;
+}
+
+/* Image Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.95);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.modal-caption {
+    text-align: center;
+    color: var(--light-text);
+    padding: 1.5rem 0;
+    margin-top: 1.5rem;
+}
+
+.modal-caption h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--light-text);
+}
+
+.modal-caption p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.modal-close {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    color: var(--light-text);
+    font-size: 3rem;
+    font-weight: 300;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 1001;
+    line-height: 1;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: var(--secondary-color);
 }
 
 /* Testimonials Section */
@@ -628,6 +709,24 @@ footer {
     .faq-items {
         grid-template-columns: 1fr;
     }
+
+    .modal-close {
+        top: 1rem;
+        right: 1.5rem;
+        font-size: 2.5rem;
+    }
+
+    .modal-content {
+        padding: 1rem;
+    }
+
+    .modal-caption h3 {
+        font-size: 1.4rem;
+    }
+
+    .modal-caption p {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -658,5 +757,11 @@ footer {
 
     .process-steps {
         grid-template-columns: 1fr;
+    }
+
+    .modal-close {
+        top: 0.5rem;
+        right: 1rem;
+        font-size: 2rem;
     }
 }

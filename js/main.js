@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         button.innerHTML = COPY_ICON_SVG;
         button.setAttribute('aria-label', `Copy reference to "${title.textContent.trim()}"`);
 
-        button.addEventListener('click', async () => {
+        button.addEventListener('click', async (e) => {
+            e.stopPropagation(); // Prevent opening modal when clicking copy button
             const url = img.src; // browser resolves to absolute URL
             try {
                 await navigator.clipboard.writeText(url);
@@ -67,6 +68,72 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
         });
+    }
+});
+
+// Image Modal functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('imageModal');
+    
+    // Only run modal code if modal exists (on gallery page)
+    if (!modal) return;
+    
+    const modalImg = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const closeBtn = document.querySelector('.modal-close');
+    
+    // Add click event to all gallery items
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', function(e) {
+            // Don't open modal if clicking the copy button
+            if (e.target.closest('.copy-btn')) {
+                return;
+            }
+            
+            const img = item.querySelector('img');
+            const title = item.querySelector('.overlay h3');
+            const description = item.querySelector('.overlay p');
+            
+            if (img && title) {
+                modal.style.display = 'block';
+                modalImg.src = img.src;
+                modalImg.alt = img.alt;
+                modalTitle.textContent = title.textContent.replace(/\s*<button.*<\/button>/g, '').trim();
+                
+                if (description) {
+                    modalDescription.textContent = description.textContent;
+                    modalDescription.style.display = 'block';
+                } else {
+                    modalDescription.style.display = 'none';
+                }
+                
+                // Prevent body scrolling when modal is open
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+    
+    // Close modal when clicking the X button
+    closeBtn.addEventListener('click', closeModal);
+    
+    // Close modal when clicking outside the image
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            closeModal();
+        }
+    });
+    
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
     }
 });
 
