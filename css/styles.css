@@ -636,10 +636,6 @@ footer {
     color: var(--light-text);
 }
 
-.footer-info a:hover {
-    color: var(--secondary-color);
-}
-
 .footer-nav ul {
     list-style: none;
 }
