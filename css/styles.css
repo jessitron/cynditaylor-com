@@ -633,11 +633,11 @@ footer {
 }
 
 .footer-info a {
-    color: var(--accent-color);
+    color: var(--light-text);
 }
 
 .footer-info a:hover {
-    color: var(--light-text);
+    color: var(--secondary-color);
 }
 
 .footer-nav ul {
